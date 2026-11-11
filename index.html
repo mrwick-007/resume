@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Darshan ✨</title>
+<meta name="description" content="Law student who builds with AI. Interactive resume of Darshan Sai Roul.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8fbf3;--card:#ffffffcc;--ink:#0b2b26;--mut:#4a6b64;--line:#0b2b261f;--a:#ff5a1f;--b:#ffb400;--c:#7af0c4;--track:#0b2b2614;--r:28px;
+--dp:'Unbounded','Trebuchet MS',sans-serif;--tx:'Figtree','Segoe UI',system-ui,sans-serif}
+[data-theme=dark]{--bg:#07242b;--card:#0e3a43cc;--ink:#eafff8;--mut:#93c4b9;--line:#ffffff24;--track:#ffffff1c}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font:17px/1.55 var(--tx);min-height:100vh;overflow-x:hidden;transition:background .3s}
+:focus-visible{outline:3px solid var(--b);outline-offset:3px}
+button{font:inherit;color:inherit;cursor:pointer}
+body[data-mode=pro] .s,body[data-mode=slay] .p{display:none}
+#orb{position:fixed;width:520px;height:520px;border-radius:50%;left:0;top:0;pointer-events:none;z-index:0;
+background:radial-gradient(circle,var(--b) 0,var(--a) 45%,transparent 70%);opacity:.38;filter:blur(60px);transform:translate(calc(var(--x,60vw) - 50%),calc(var(--y,20vh) - 50%));transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+#prog{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--a),var(--b),var(--c));z-index:30}
+nav{position:sticky;top:12px;z-index:20;margin:12px auto 0;width:min(1060px,calc(100% - 24px));display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:var(--card);backdrop-filter:blur(16px);border:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+nav a,nav button{white-space:nowrap;text-decoration:none;color:var(--ink);padding:8px 14px;border-radius:999px;font-weight:700;font-size:15px;background:none;border:0}
+nav a:hover{background:var(--track)}
+nav a.on{background:var(--ink);color:var(--bg)}
+nav .sp{flex:1}
+nav .tg{background:var(--c);color:#17123a;border:2px solid #17123a}
+wrap,.wrap{display:block;position:relative;z-index:1;width:min(1060px,calc(100% - 24px));margin:0 auto}
+header.hero{padding:64px 0 36px}
+.hello{display:inline-block;padding:6px 14px;border-radius:999px;background:var(--c);color:#17123a;font-weight:700;border:2px solid #17123a;transform:rotate(-2deg)}
+h1{font:900 clamp(40px,9vw,104px)/.98 var(--dp);letter-spacing:-.04em;margin:18px 0 14px}
+h1 span{display:inline-block;background:linear-gradient(100deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent;animation:wob 4s ease-in-out infinite}
+h1 span:nth-child(2){animation-delay:.3s}h1 span:nth-child(3){animation-delay:.6s}
+@keyframes wob{50%{transform:translateY(-6px) rotate(-1.5deg)}}
+.lead{font-size:clamp(18px,2.4vw,23px);max-width:46ch;color:var(--mut)}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;gap:8px;align-items:center;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:999px;border:2px solid var(--ink);color:var(--ink);background:var(--card);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.btn.pri{background:var(--a);color:#1a0a00;border-color:var(--a)}.btn.pri:hover{box-shadow:4px 4px 0 var(--b)}
+section{padding:42px 0 8px}
+h2{font:700 clamp(26px,4.6vw,44px)/1.05 var(--dp);letter-spacing:-.03em;margin-bottom:20px}
+.bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:var(--card);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:transform .2s}
+.card:hover{transform:translateY(-4px) rotate(-.4deg)}
+.card h3{font:700 18px/1.25 var(--dp);letter-spacing:-.02em}
+.sub{color:var(--mut);margin:4px 0 10px}
+.card ul{padding-left:20px}.card li{margin:5px 0}
+.tag{display:inline-block;font-weight:700;font-size:13px;padding:3px 11px;border-radius:999px;background:var(--c);color:#17123a;margin-bottom:10px}
+.tag.live{background:var(--b);color:#1a0a00}
+.date{float:right;color:var(--mut);font-weight:700;font-size:14px}
+.wide{grid-column:1/-1}
+.rings{display:flex;gap:22px;flex-wrap:wrap;margin-top:14px}
+.ring{--v:70;width:96px;height:96px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--a),var(--b) calc(var(--v)*1%),var(--track) 0);position:relative;text-align:center;font:700 15px/1.1 var(--dp)}
+.ring::before{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--bg)}
+.ring b{position:relative}
+.ring+small,.rg small{display:block;color:var(--mut);font-size:13px;text-align:center;margin-top:6px}
+.rg{width:96px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:10px 16px;border-radius:999px;border:2px solid var(--ink);background:var(--card);font-weight:700;transition:transform .15s,background .15s}
+.chip:hover{transform:scale(1.07) rotate(-2deg)}
+.chip.on{background:var(--c);color:#17123a}
+.grp{margin-bottom:18px}.grp h3{font:700 14px var(--dp);margin-bottom:10px;color:var(--mut)}
+.slot{border:3px dashed var(--line);border-radius:var(--r);padding:22px;display:grid;place-items:center;text-align:center;color:var(--mut);min-height:150px}
+footer{position:relative;z-index:1;text-align:center;color:var(--mut);padding:50px 12px 40px}
+#toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,140px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:700;z-index:40;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+#toast.on{transform:translate(-50%,0)}
+.pop{position:fixed;pointer-events:none;z-index:50;font-size:22px;animation:fly .9s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--dx),var(--dy)) scale(.4);opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+[hidden]{display:none!important}
+.ring.big{width:120px;height:120px;font-size:20px}.rg:has(.big){width:120px}
+.yr{display:flex;gap:26px;flex-wrap:wrap;align-items:center;margin-top:16px;padding-top:16px;border-top:1px dashed var(--line)}.sems{display:flex;gap:18px;flex-wrap:wrap}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:16px}.flow div{border:1px solid var(--line);border-radius:18px;padding:12px;background:var(--track)}.flow b{display:block;font:700 15px var(--dp);color:var(--a)}.flow span{font-size:15px;color:var(--mut)}
+#gov,#ret{position:fixed;inset:0;z-index:55;display:grid;place-items:center;background:#0009;padding:12px}
+.gbox{background:var(--bg);border:3px solid var(--ink);border-radius:var(--r);padding:26px;max-width:min(480px,94vw);box-shadow:8px 8px 0 var(--a);text-align:center}
+.gbox p{font:700 clamp(20px,4vw,28px)/1.2 var(--dp);margin-bottom:18px}.gb{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#red{position:fixed;inset:0;z-index:60;pointer-events:none;display:grid;place-items:center;text-align:center;font:900 clamp(40px,10vw,120px)/1 var(--dp);color:#fff;text-shadow:0 0 30px #f00;animation:fl .5s steps(2) infinite}
+#red small{display:block;font-size:.25em;letter-spacing:.1em}@keyframes fl{0%{background:#ff1a1a66}50%{background:#ff1a1a14}}
+#bins span{position:fixed;bottom:6px;z-index:65;font-size:42px}#bins span:nth-child(1){left:12px}#bins span:nth-child(2){left:50%}#bins span:nth-child(3){right:12px}
+.x-bin{animation:bin 1s ease-in forwards}@keyframes bin{to{transform:translate(var(--tx),var(--ty)) rotate(200deg) scale(.03);opacity:0}}
+.x-shred{-webkit-mask:repeating-linear-gradient(90deg,#000 0 5px,transparent 5px 7px);mask:repeating-linear-gradient(90deg,#000 0 5px,transparent 5px 7px);animation:shr 1s ease-in forwards}@keyframes shr{to{transform:translateY(60vh) scaleY(.2);opacity:0}}
+.x-erase{animation:ers .9s ease-in forwards}@keyframes ers{from{clip-path:inset(0)}to{clip-path:inset(0 0 0 100%);filter:blur(6px);opacity:0}}
+.gone{visibility:hidden!important}
+.bot{position:fixed;z-index:70;font-size:28px;pointer-events:none;animation:hop .8s ease-in-out forwards}@keyframes hop{0%{transform:translateX(-50px)}40%{transform:translate(0,-14px)}70%{transform:none}100%{transform:translateX(30px);opacity:0}}
+</style>
+</head>
+<body data-mode="slay">
+<div id="prog"></div><div id="orb" aria-hidden="true"></div>
+<nav id="nav" aria-label="Sections"></nav>
+<div class="wrap" id="app"></div>
+<footer><span class="s">built with prompts, vibes and a lot of caffeine. fr.</span><span class="p">Built with AI-assisted prompting.</span></footer>
+<div id="gov" role="alertdialog" aria-labelledby="gq" hidden><div class="gbox"><p id="gq"></p><div class="gb" id="gb"></div></div></div>
+<div id="red" hidden aria-hidden="true"><div>CODE RED<small>SYSTEM BREACH</small></div></div>
+<div id="bins" hidden aria-hidden="true"><span>🗑️</span><span>🗑️</span><span>🗑️</span></div>
+<div id="ret" role="alertdialog" hidden><div class="gbox"><p>Site decommissioned. All records destroyed.</p><button class="btn pri" id="retry">Retry ▶</button></div></div>
+<div id="toast" role="status"></div>
+
+<script>
+/* ====== EDIT ONLY THIS BLOCK TO UPDATE THE RESUME ====== */
+const D = {
+  name: ["Darshan","Sai","Roul"],
+  hello: ["hey, i’m Darshan","Hello, I’m Darshan"],
+  lead: ["Second-year law student at PGCL who reads statutes and also builds with AI. Legal tech is my main character era.",
+         "Second-year B.A. LL.B. student at SVKM’s Pravin Gandhi College of Law, Mumbai. I research Indian law and build with AI tools."],
+  interests: ["Legal Technology & AI Tools","AI Prompt Engineering","Web Designing","Travel"],
+  languages: ["English","Hindi","Odia","Telugu"],
+  exp: [
+    {t:"Research Intern",o:"Jann16 Foundation (Project Setu) · Mumbai",d:"Sep 2026 – Oct 2026",s:["ate and left no crumbs","Completed"],b:[
+      "Researched Indian laws, rules, policies and schemes on youth rights across Cyber Crime, Health, Safety and Marriage.",
+      "Identified and assessed legal instruments through government portals, ministries, statutory bodies and official publications.",
+      "Verified source details and documented legal basis, issuing authority, year and links for traceable research.",
+      "Gained experience researching central-level Acts, rules, policies and schemes."]},
+    {t:"Co-Convenor",o:"Centre for Robotics, AI & Technology Laws · PGCL",d:"Ongoing",s:["in my era","Ongoing"],b:[
+      "Leading the Tech Tools post for PGCL’s monthly Thursday Tech Law Bulletin.",
+      "October 2026 edition: Legal Tech Tool of the Month, Prism AI."]},
+    {t:"Volunteer",o:"Robin Hood Army · Mumbai",d:"Ongoing",s:["in my era","Ongoing"],b:[
+      "Teach children from underprivileged communities through the organisation’s learning initiatives.",
+      "Support educational outreach with university students and subject experts, including menstrual hygiene awareness sessions led by healthcare professionals."]}
+  ],
+  edu: [
+    {t:"B.A. LL.B.",o:"SVKM’s Pravin Gandhi College of Law, Mumbai",d:"2025 – 2030",n:"Currently in second year. Coursework: Sociology, Political Science, History of Courts. Scores are out of 10.",
+     years:[{y:"1st Year",c:"7.33",v:73.3,sems:[["Sem I · SGPA","7.00",70],["Sem II · SGPA","7.77",77.7]]}]},
+    {t:"BCA (Computer Applications)",o:"Indira Gandhi National Open University (IGNOU), Delhi",d:"2025 – 2028",n:"Studying alongside law."},
+    {t:"Class XII · CBSE",o:"Bridgewell Global School, Bhubaneswar, Odisha",d:"2025",rings:[["Score","64.4%",64.4]]},
+    {t:"Class X · CBSE",o:"Sivananda Centenary Boys’ High School, Bhubaneswar, Odisha",d:"2022",rings:[["Score","81.4%",81.4]]}
+  ],
+  skills: {
+    "Legal & research":["Legal Research","Web Data Extraction"],
+    "AI & building":["Vibe Coding","Prompt Engineering"],
+    "Marketing & design":["Digital Marketing","Google Ads Manager","Canva Designing"],
+    "Everyday tools":["MS Word, Excel, PowerPoint","Typing: 80 WPM"]
+  },
+  certs: [
+    {t:"CSEET cleared",o:"Institute of Company Secretaries of India",d:"Jan 2026",n:"Scored 154/200 on the Company Secretary Executive Entrance Test (formerly CS Foundation)."},
+    {t:"AI & Law, Honours",o:"Lund University",d:"Dec 2025",n:"Honours certificate, grade 100%."},
+    {t:"Introduction to AI",o:"Google",d:"Jan 2026",n:"Grade 100%."},
+    {t:"Certificate Member",o:"Social Psychology Network",d:"May 2026",n:""}
+  ],
+  projects: [
+    {t:"Google Photos duplicate deleter",n:"Browser extension for Firefox and Chromium-based browsers that finds and deletes duplicate photos in Google Photos.",tag:["big build","Major project"]},
+    {t:"LeadHunter",tag:["big build","Major project"],n:"Multi-agent business lead generation and data extraction system. It discovers businesses, locates their websites, extracts contact emails and organises verified leads into one central database.",
+     stack:["Python","Playwright","CSV + central database","HTML/CSS/JS dashboard (in development)"],
+     flow:[["Garuda","Business discovery. Finds businesses on Google Maps by category and location."],["Anjaneya","Website extraction. Finds official websites for Garuda’s businesses."],["Chakravyuha","Master pipeline. Orchestrates the whole workflow, including Arjuna and Krishna."],["Arjuna","Email extraction. Visits business websites and extracts email addresses."],["Krishna","Review stage. Processes leads sent for manual or secondary extraction."],["Vedvyasa","Final database. Stores processed leads for the frontend."]],
+     st:"Status: Garuda is operational and has collected hundreds of business listings in testing. The remaining components and their integration are the current focus, and the frontend is being built separately."},
+    {t:"Attendance tracker",n:"An attendance tracker I built.",tag:["side quest","Project"]},
+    {t:"mr wick",n:"Personal landing page.",l:"https://mrwick-007.github.io/mrwick/",tag:["live","Live"]},
+    {t:"This resume",n:"Interactive resume built with AI-assisted prompting.",tag:["live","Live"]},
+    {empty:1}
+  ],
+  contact: {email:"rouldarshansai@gmail.com",phone:"+91 8260793282",discord:".mrwick.",
+    links:[["LinkedIn","https://www.linkedin.com/in/mrwick007/"],["GitHub","https://github.com/mrwick-007"],["X","https://x.com/__mrwick__/"],["WhatsApp","https://wa.me/918260793282/"]]}
+};
+/* section titles: [slay, pro] */
+const H={about:["the lore","About"],exp:["the grind so far","Experience"],edu:["academic weapon","Education"],skills:["the toolkit","Skills"],certs:["W’s only","Certificates"],projects:["currently cooking","Projects"],contact:["hmu 👇🗣️","Contact"]};
+const NAV={about:["lore","About"],exp:["grind","Experience"],edu:["acads","Education"],skills:["toolkit","Skills"],certs:["W’s","Certificates"],projects:["cooking","Projects"],contact:["hmu","Contact"]};
+/* ====== END EDIT BLOCK ====== */
+
+const $=s=>document.querySelector(s);
+const tt=a=>`<span class="s">${a[0]}</span><span class="p">${a[1]}</span>`;
+const ring=r=>`<div class="rg"><div class="ring" style="--v:${r[2]}"><b>${r[1]}</b></div><small>${r[0]}</small></div>`;
+const sec=(id,body)=>`<section id="${id}"><h2>${tt(H[id])}</h2>${body}</section>`;
+const cardHead=(x)=>`<span class="date">${x.d}</span>`;
+let h=`<header class="hero"><span class="hello">${tt(D.hello)}</span>
+<h1 aria-label="${D.name.join(" ")}">${D.name.map(n=>`<span>${n}</span>`).join(" ")}</h1>
+<p class="lead">${tt(D.lead)}</p>
+<div class="cta"><a class="btn pri" href="#exp">${tt(["see the work","View experience"])}</a><button class="btn" id="copy">${tt(["copy my email","Copy email"])}</button><a class="btn" href="#contact">${tt(["hmu 👇🗣️","Contact"])}</a></div></header>`;
+h+=sec("about",`<div class="bento"><div class="card"><h3>${tt(["main interests","Interests"])}</h3><div class="chips" style="margin-top:12px">${D.interests.map(i=>`<span class="chip" style="cursor:default">${i}</span>`).join("")}</div></div>
+<div class="card"><h3>${tt(["speaks","Languages"])}</h3><div class="chips" style="margin-top:12px">${D.languages.map(i=>`<span class="chip" style="cursor:default">${i}</span>`).join("")}</div></div>
+<div class="card"><h3>${tt(["location","Based in"])}</h3><p class="sub">Mumbai, Maharashtra</p><p class="sub">${tt(["from Bhubaneswar, Odisha","Originally from Bhubaneswar, Odisha"])}</p><p class="sub">Born in <s>Bangalore</s> Bengaluru, 2006</p></div></div>`);
+h+=sec("exp",`<div class="bento">${D.exp.map((e,i)=>`<article class="card ${i===0?"wide":""}">${cardHead(e)}<span class="tag">${tt(e.s)}</span><h3>${e.t}</h3><p class="sub">${e.o}</p><ul>${e.b.map(x=>`<li>${x}</li>`).join("")}</ul></article>`).join("")}</div>`);
+const yr=y=>`<div class="yr"><div class="rg"><div class="ring big" style="--v:${y.v}"><b>${y.c}</b></div><small>${y.y} · CGPA</small></div><div class="sems">${y.sems.map(ring).join("")}</div></div>`;
+h+=sec("edu",`<div class="bento">${D.edu.map((e,i)=>`<article class="card ${i===0?"wide":""}">${cardHead(e)}<h3>${e.t}</h3><p class="sub">${e.o}</p>${e.n?`<p>${e.n}</p>`:""}${(e.years||[]).map(yr).join("")}${e.rings?`<div class="rings">${e.rings.map(ring).join("")}</div>`:""}</article>`).join("")}</div>`);
+h+=sec("skills",Object.entries(D.skills).map(([g,a])=>`<div class="grp"><h3>${g}</h3><div class="chips">${a.map(s=>`<button class="chip" aria-pressed="false">${s}</button>`).join("")}</div></div>`).join("")+`<p class="sub" id="cnt">${tt(["tap the skills. they pop.","Select a skill to highlight it."])}</p>`);
+h+=sec("certs",`<div class="bento">${D.certs.map(c=>`<article class="card">${cardHead(c)}<h3>${c.t}</h3><p class="sub">${c.o}</p>${c.n?`<p>${c.n}</p>`:""}</article>`).join("")}</div>`);
+h+=sec("projects",`<div class="bento">${D.projects.map(p=>p.empty?`<div class="slot"><div>${tt(["next project loading…","Next project goes here"])}</div></div>`:`<article class="card ${p.flow?"wide":""}"><span class="tag live">${tt(p.tag)}</span><h3>${p.t}</h3><p class="sub">${p.n}</p>${p.stack?`<div class="chips">${p.stack.map(x=>`<span class="chip" style="cursor:default">${x}</span>`).join("")}</div>`:""}${p.flow?`<div class="flow">${p.flow.map(f=>`<div><b>${f[0]}</b><span>${f[1]}</span></div>`).join("")}</div>`:""}${p.st?`<p class="sub" style="margin-top:14px">${p.st}</p>`:""}${p.l?`<a href="${p.l}" target="_blank" rel="noopener" class="btn">${tt(["check it","Open"])}</a>`:""}</article>`).join("")}</div>`);
+const C=D.contact;
+h+=sec("contact",`<div class="card wide"><h3 style="font-size:clamp(20px,3.4vw,32px)">${C.email}</h3><p class="sub">${C.phone}</p><div class="cta" style="margin-top:14px"><a class="btn pri" href="mailto:${C.email}">Email</a><a class="btn" href="tel:${C.phone.replace(/\s/g,"")}">Call</a>${C.links.map(l=>`<a class="btn" href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a>`).join("")}<button class="btn" id="dc">Discord: ${C.discord}</button></div><p class="sub" style="margin-top:14px">${tt(["pls don’t stalk me 🥺","Please be respectful with my contact details."])} <a href="#" id="gv">${tt(["– if you are the government, click here","If you are the government, click here"])}</a></p></div>`);
+$("#app").innerHTML=h;
+
+let mode="slay";
+function navr(){$("#nav").innerHTML=Object.keys(NAV).map(k=>`<a href="#${k}">${NAV[k][mode==="slay"?0:1]}</a>`).join("")+`<span class="sp"></span><button class="tg" id="mode" aria-pressed="${mode==="slay"}">${mode==="slay"?"slay mode: on":"Casual mode"}</button><button id="th" aria-label="Toggle dark mode">◐</button>`}
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),2200)}
+function burst(x,y){const e=["✨","💅","🔥","💜","⚡","🫶"];for(let i=0;i<7;i++){const p=document.createElement("span");p.className="pop";p.textContent=e[Math.floor(Math.random()*e.length)];p.style.left=x+"px";p.style.top=y+"px";p.style.setProperty("--dx",(Math.random()*160-80)+"px");p.style.setProperty("--dy",(-40-Math.random()*110)+"px");document.body.appendChild(p);setTimeout(()=>p.remove(),950)}}
+navr();
+document.addEventListener("click",e=>{
+ if(e.target.closest("#mode")){mode=mode==="slay"?"pro":"slay";document.body.dataset.mode=mode;navr();toast(mode==="slay"?"slay mode on":"Casual mode on");return}
+ if(e.target.closest("#th")){const d=document.documentElement;d.dataset.theme=d.dataset.theme==="dark"?"":"dark";return}
+ if(e.target.closest("#copy")){navigator.clipboard&&navigator.clipboard.writeText(D.contact.email).then(()=>toast(mode==="slay"?"copied, bestie":"Email copied"),()=>toast(D.contact.email));return}
+ const c=e.target.closest(".chip[aria-pressed]");
+ if(c){const on=c.getAttribute("aria-pressed")!=="true";c.setAttribute("aria-pressed",on);c.classList.toggle("on",on);if(on){const r=c.getBoundingClientRect();burst(r.left+r.width/2,r.top)}
+  const n=document.querySelectorAll(".chip.on").length;$("#cnt").innerHTML=n?`${n} ${mode==="slay"?"skills locked in":"selected"}`:tt(["tap the skills. they pop.","Select a skill to highlight it."])}});
+addEventListener("pointermove",e=>{const o=$("#orb").style;o.setProperty("--x",e.clientX+"px");o.setProperty("--y",e.clientY+"px")});
+const ids=Object.keys(NAV);
+addEventListener("scroll",()=>{const d=document.documentElement,p=scrollY/(d.scrollHeight-innerHeight)*100;$("#prog").style.width=p+"%";
+ let cur="";ids.forEach(i=>{if($("#"+i).getBoundingClientRect().top<innerHeight*.4)cur=i});
+ document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur))},{passive:true});
+if(matchMedia("(prefers-color-scheme:dark)").matches)document.documentElement.dataset.theme="dark";
+/* animated tab title + favicon */
+const TT=["Darshan ✨","law + code 💻","hire me? 👀","slay mode: on 💅"],FE=["✨","⚖️","💻","🫶","🔥","👀"];let ti=0;
+const fav=document.createElement("link");fav.rel="icon";document.head.appendChild(fav);
+const cv=document.createElement("canvas");cv.width=cv.height=64;const cx=cv.getContext("2d");
+setInterval(()=>{ti++;document.title=document.hidden?"come back 🥺":TT[(ti>>1)%TT.length];
+ cx.clearRect(0,0,64,64);cx.font="48px serif";cx.textAlign="center";cx.textBaseline="middle";cx.save();cx.translate(32,34);const k=1+.18*Math.sin(ti);cx.scale(k,k);cx.fillText(FE[ti%FE.length],0,0);cx.restore();fav.href=cv.toDataURL()},900);
+/* discord copy */
+$("#dc").onclick=()=>{navigator.clipboard&&navigator.clipboard.writeText(D.contact.discord);toast("Discord copied: "+D.contact.discord)};
+/* "are you the government" bit */
+let govSeen=false,ac,osc;
+function siren(on){if(on){try{ac=new(window.AudioContext||window.webkitAudioContext)();osc=ac.createOscillator();const g=ac.createGain();osc.type="sawtooth";g.gain.value=.12;osc.connect(g);g.connect(ac.destination);osc.start();const t=ac.currentTime;for(let i=0;i<20;i++){osc.frequency.setValueAtTime(420,t+i*1.1);osc.frequency.exponentialRampToValueAtTime(900,t+i*1.1+.9)}}catch(e){}}else{try{osc&&osc.stop();ac&&ac.close()}catch(e){}osc=null}}
+function ask(n){$("#gov").hidden=false;$("#gq").textContent=n===1?"Just checking… are YOU the government??":"ARE YOU SURE???";
+ $("#gb").innerHTML=n===1?'<button class="btn pri" data-g="p">Yes</button><button class="btn" data-g="n">No</button>':'<button class="btn pri" data-g="p">Yes, I’m the government</button><button class="btn pri" data-g="p">No, I’m not sure!</button>';$("#gb button").focus()}
+function purge(){govSeen=true;$("#gov").hidden=true;$("#red").hidden=false;$("#bins").hidden=false;siren(true);
+ const q=[...document.querySelectorAll("nav,.hello,h1,.lead,header .cta,h2,.card,.slot,.grp .chip,#cnt,footer")];
+ const V=new Map(q.map(e=>{const r=e.getBoundingClientRect();return[e,r.bottom>0&&r.top<innerHeight]}));
+ const o=[...q.filter(e=>V.get(e)),...q.filter(e=>!V.get(e))];let t=0;
+ o.forEach((e,i)=>{const v=V.get(e);t+=v?170:35;const k=["bin","shred","erase"][i%3];
+  setTimeout(()=>{const r=e.getBoundingClientRect(),bx=[40,innerWidth/2,innerWidth-40][i%3];
+   e.style.setProperty("--tx",(bx-(r.left+r.width/2))+"px");e.style.setProperty("--ty",(innerHeight-40-(r.top+r.height/2))+"px");e.classList.add("x-"+k);
+   if(v){const b=document.createElement("span");b.className="bot";b.textContent="🕴️";b.style.left=Math.max(4,r.left-10)+"px";b.style.top=Math.min(innerHeight-40,Math.max(4,r.top))+"px";document.body.appendChild(b);setTimeout(()=>b.remove(),850)}
+   setTimeout(()=>e.classList.add("gone"),1000)},t)});
+ setTimeout(()=>{siren(false);$("#red").hidden=true;$("#ret").hidden=false;$("#retry").focus()},t+1300)}
+document.addEventListener("click",e=>{const g=e.target.closest("[data-g]");
+ if(g){g.dataset.g==="p"?purge():ask(2)}
+ if(e.target.closest("#gv")){e.preventDefault();purge()}
+ if(e.target.closest("#retry")){document.querySelectorAll(".x-bin,.x-shred,.x-erase,.gone").forEach(x=>x.classList.remove("x-bin","x-shred","x-erase","gone"));$("#ret").hidden=true;$("#bins").hidden=true;scrollTo(0,0)}});
+setTimeout(()=>{if(!govSeen){govSeen=true;ask(1)}},5500);
+</script>
+</body>
+</html>
